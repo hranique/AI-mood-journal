@@ -1,75 +1,121 @@
-<<<<<<< HEAD
 # AI-mood-journal
+
 A full-stack web application that uses the Gemini AI API to analyze daily journal entries for mood, productivity, and sentiment, featuring real-time data visualization.
-=======
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Features
 
-## Available Scripts
+- Natural language journal input
+- AI-powered mood & productivity scoring
+- Activity extraction
+- Sentiment analysis
+- Live dashboard with charts (React + Recharts)
 
-In the project directory, you can run:
+# Tech Stack
 
-### `npm start`
+Frontend:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React
+- Recharts (data visualization)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Backend:
 
-### `npm test`
+- Flask (Python)
+- Gemini API (Google AI)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Project Structure
 
-### `npm run build`
+AI-mood-journal/
+│
+├── backend/
+│ └── app.py
+│
+├── frontend/
+│ ├── src/
+│ │ ├── Dashboard.jsx
+│ │ ├── App.jsx
+│ │ └── index.js
+│ └── package.json
+│
+└── README.md
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Setup Instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository
+   git clone https://github.com/hranique/AI-mood-journal
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Backend Setup (Flask) 2. Navigate to backend
+cd backend 3. Install dependencies
+pip install flask flask-cors requests 4. Add your Gemini API key
 
-### `npm run eject`
+Open app.py and replace:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+GEMINI_API_KEY = "YOUR_API_KEY"
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+with your actual API key.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Recommended (safer): use environment variable
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Mac/Linux
 
-## Learn More
+export GEMINI_API_KEY=your_key
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Windows
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+set GEMINI_API_KEY=your_key 5. Run backend server
+python app.py
 
-### Code Splitting
+You should see:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Running on http://127.0.0.1:5000
+Frontend Setup (React) 6. Open a new terminal and go to frontend
+cd frontend 7. Install dependencies
+npm install 8. Start the React app
+npm start
 
-### Analyzing the Bundle Size
+App will run on:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+http://localhost:3000
 
-### Making a Progressive Web App
+# How to Use
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Open the app in your browser
+Enter a journal entry such as:
+Studied for 3 hours and felt productive but tired.
+Went to the gym and felt good.
+Worked on coding project and felt stressed but accomplished.
 
-### Advanced Configuration
+Click "Add Entry"
+The app will:
+Assign mood & productivity scores
+Extract activities
+Analyze sentiment
+Display results in a chart
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+📊 Example Output
+{
+"mood_score": 7,
+"productivity_score": 8,
+"activities": ["studying", "gym", "coding"],
+"sentiment": "positive"
+}
+⚠️ Known Limitations
+AI responses may occasionally be inconsistent
+Requires internet connection for API calls
+API rate limits may apply (Gemini free tier)
+🤖 AI Usage
 
-### Deployment
+This project uses:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Gemini API for natural language analysis
+AI-assisted coding tools for development and debugging
+📌 Future Improvements
+Save entries to database (Supabase / MongoDB)
+Authentication system
+Weekly/monthly analytics
+Improved UI/UX (themes, animations)
+👨‍💻 Author
+Ranique Huggins
 
-### `npm run build` fails to minify
+📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 2c5d6dd (Initialize project using Create React App)
+This project is for educational purposes.
